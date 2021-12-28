@@ -33,7 +33,7 @@ git config --global user.email "kingtran.2112@gmail.com"
 
 # Install prezto
 echo "Set up prezto"
-if ! isApplicationExist prompt
+if [[ ! -d ${ZDOTDIR:-$HOME}/.zprezto ]]
 then
   echo "Start install prezto"
   git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
