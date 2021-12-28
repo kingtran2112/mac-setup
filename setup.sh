@@ -1,3 +1,8 @@
+#! /bin/zsh
+isApplicationExist() {
+  command -v $1 &> /dev/null
+}
+
 #Install homebrew
 echo "Start install homebrew"
 if ! isApplicationExist brew
@@ -27,12 +32,11 @@ git config --global user.name "King Tran"
 git config --global user.email "kingtran.2112@gmail.com"
 
 # Install prezto
-echo "Start install prezto"
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-
 echo "Set up prezto"
 if ! isApplicationExist prompt
 then
+  echo "Start install prezto"
+  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
   setopt EXTENDED_GLOB
   for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
     ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
@@ -59,7 +63,3 @@ applications=(visual-studio-code )
 echo "Start install vscode"
 brew install --cask visual-studio-code
 echo "Finish install vscode"
-
-isApplicationExist() {
-  command -v $1 &> /dev/null
-}
