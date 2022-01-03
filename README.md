@@ -7,11 +7,12 @@ common application for a new mac OS system.
 
 The list of application will be installed:
 * Homebrew
-* Iterm 2
-* Git (and configuration for user name and email)
+* Git (NOTE: Configuration for user name and email will be overridden)
 * Prezto (NOTE: The shell script override current configuration with the
 defined configuration in the repository)
+* Iterm 2
 * VS Code
+* Google Chrome
 
 # How to run
 
