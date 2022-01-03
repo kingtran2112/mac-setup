@@ -1,3 +1,5 @@
+# Requirements
+* zsh
 # Description
 
 The repository contains the shell script and necessary files for setting

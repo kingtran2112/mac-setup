@@ -1,11 +1,18 @@
 #! /bin/zsh
-isApplicationExist() {
+# ---Util function---
+isCommandExist() {
   command -v $1 &> /dev/null
 }
 
+# Check if the application is exist in /Applications folder
+isApplicationExist() {
+  [[ -d /Applications/$1.app ]]
+}
+
+# ---Main function---
 #Install homebrew
 echo "Start install homebrew"
-if ! isApplicationExist brew
+if ! isCommandExist brew
 then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   echo "Finish install homebrew"
@@ -13,14 +20,9 @@ else
   echo "Brew is already installed, skiped!!!"
 fi
 
-#Install iterm
-echo "Start install iterm2"
-brew install --cask iterm2
-echo "Finish install iterm2"
-
 #Install git
 echo "Start install"
-if ! isApplicationExist git
+if ! isCommandExist git
 then
   brew install git
 else
@@ -57,9 +59,32 @@ else
   echo "Prezto is already installed, skiped!!!"
 fi
 
-applications=(visual-studio-code )
+declare -A applications
 
-#Install visual studio code
-echo "Start install vscode"
-brew install --cask visual-studio-code
-echo "Finish install vscode"
+applications=(
+  ["Visual Studio Code"]="visual-studio-code"
+  ["Google Chrome"]="google-chrome"
+  ["iTerm"]="iterm2"
+)
+
+installApplication=()
+
+# Checking if application exist and add homebrew name of the un-installed 
+# application to $installApplication
+for applicationName in ${(k)applications}; do
+  if ! isApplicationExist $applicationName;
+  then
+    installApplication+=(applications[$applicationName])
+  else
+    echo "$applicationName is exist, skip install!!!"
+  fi
+done
+
+# Install application in $installApplication by homebrew
+for application in $installApplication; do
+  echo "Start install ${application}"
+  brew install --cask $application
+  echo "Finish install ${application}"
+done
+
+brew cleanup
