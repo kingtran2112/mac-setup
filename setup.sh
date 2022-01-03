@@ -52,7 +52,7 @@ then
   # so we use backward slash to avoid it
   # We can also use sed command to change the configuration or add the module
   # we want but we think directly copy it like this is more straightforward and easier
-  \cp -v zpreztorc ~/.zpreztorc
+  \cp -v dotfile/.zpreztorc ~/.zpreztorc
 
   echo "Finish install prezto"
 else
