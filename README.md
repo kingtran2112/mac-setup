@@ -13,6 +13,8 @@ defined configuration in the repository)
 * Iterm 2
 * VS Code
 * Google Chrome
+* Slack
+* Discord
 
 # How to run
 
