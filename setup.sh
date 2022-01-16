@@ -32,6 +32,7 @@ fi
 echo "Config git"
 git config --global user.name "King Tran"
 git config --global user.email "kingtran.2112@gmail.com"
+git config --global init.defaultBranch main
 
 # Install prezto
 echo "Set up prezto"
