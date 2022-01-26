@@ -75,7 +75,8 @@ applications=(
   ["Google Chrome"]="google-chrome"
   ["iTerm"]="iterm2",
   ["Slack"]="slack",
-  ["Discord"]="discord"
+  ["Discord"]="discord",
+  ["Hammerspoon"]="hammerspoon"
 )
 
 installApplication=()
