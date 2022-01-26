@@ -15,6 +15,7 @@ defined configuration in the repository)
 * Google Chrome
 * Slack
 * Discord
+* Hammerspoon
 
 # How to run
 
