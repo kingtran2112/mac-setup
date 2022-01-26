@@ -34,6 +34,14 @@ git config --global user.name "King Tran"
 git config --global user.email "kingtran.2112@gmail.com"
 git config --global init.defaultBranch main
 
+# Install node js
+if ! isCommandExist node
+then
+  brew install node
+else
+  echo "Node is already installed, skiped!!!"
+fi
+
 # Install prezto
 echo "Set up prezto"
 if [[ ! -d ${ZDOTDIR:-$HOME}/.zprezto ]]
@@ -91,3 +99,12 @@ for application in $installApplication; do
 done
 
 brew cleanup
+
+read -p "Do you want to install Golang?(y/n): " golang
+
+if [[ $golang = "y" ]]
+then
+  echo "Yes"
+else
+  echo "No"
+fi
