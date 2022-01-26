@@ -100,12 +100,3 @@ for application in $installApplication; do
 done
 
 brew cleanup
-
-read -p "Do you want to install Golang?(y/n): " golang
-
-if [[ $golang = "y" ]]
-then
-  echo "Yes"
-else
-  echo "No"
-fi
