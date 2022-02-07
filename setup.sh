@@ -99,4 +99,11 @@ for application in $installApplication; do
   echo "Finish install ${application}"
 done
 
+# https://code.visualstudio.com/docs/setup/mac#_alternative-manual-instructions
+cat << EOF >> ~/.zprofile
+# Add Visual Studio Code (code)
+export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+EOF
+
+
 brew cleanup
