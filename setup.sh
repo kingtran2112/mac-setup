@@ -87,7 +87,7 @@ installApplication=()
 for applicationName in ${(k)applications}; do
   if ! isApplicationExist $applicationName;
   then
-    installApplication+=(applications[$applicationName])
+    installApplication+=($applications[$applicationName])
   else
     echo "$applicationName is exist, skip install!!!"
   fi
