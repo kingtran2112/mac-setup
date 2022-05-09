@@ -48,3 +48,31 @@ dragOtherToScroll =
 overrideOtherMouseDown:start()
 overrideOtherMouseUp:start()
 dragOtherToScroll:start()
+
+-- HANDLE HOTKEY BINDING
+terminalName = "Warp"
+hs.hotkey.bind({"⌃"}, "tab", function()
+  currentApp = hs.application.frontmostApplication()
+  if currentApp:name() == terminalName then
+    currentApp:hide()
+    return
+  end
+
+  if not hs.application.launchOrFocus(terminalName) then
+    hs.alert.show("Cannot open " .. terminalName .. ", maybe it is not installed!")
+  end
+end)
+
+-- AUTO RELOAD CONFIG
+function reloadConfig(files)
+  local doReload = false
+  for _, file in pairs(files) do
+    if file:sub(-4) == ".lua" then
+      doReload = true
+    end
+  end
+  if doReload then
+    hs.reload()
+  end
+end
+spoonConfigWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
