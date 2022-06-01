@@ -74,10 +74,11 @@ declare -A applications
 applications=(
   ["Visual Studio Code"]="visual-studio-code"
   ["Google Chrome"]="google-chrome"
-  ["iTerm"]="iterm2",
+  ["Warp"]="warp",
   ["Slack"]="slack",
   ["Discord"]="discord",
-  ["Hammerspoon"]="hammerspoon"
+  ["Hammerspoon"]="hammerspoon",
+  ["Rectangle"]="rectangle"
 )
 
 installApplication=()
