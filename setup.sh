@@ -74,10 +74,10 @@ declare -A applications
 applications=(
   ["Visual Studio Code"]="visual-studio-code"
   ["Google Chrome"]="google-chrome"
-  ["Warp"]="warp",
-  ["Slack"]="slack",
-  ["Discord"]="discord",
-  ["Hammerspoon"]="hammerspoon",
+  ["Warp"]="warp"
+  ["Slack"]="slack"
+  ["Discord"]="discord"
+  ["Hammerspoon"]="hammerspoon"
   ["Rectangle"]="rectangle"
 )
 
