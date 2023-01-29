@@ -10,12 +10,13 @@ The list of application will be installed:
 * Git (NOTE: Configuration for user name and email will be overridden)
 * Prezto (NOTE: The shell script override current configuration with the
 defined configuration in the repository)
-* Iterm 2
+* Warp
 * VS Code
 * Google Chrome
 * Slack
 * Discord
 * Hammerspoon
+* Rectangle
 
 # How to run
 
