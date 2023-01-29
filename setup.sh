@@ -15,6 +15,10 @@ echo "Start install homebrew"
 if ! isCommandExist brew
 then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  echo '# Set PATH, MANPATH, etc., for Homebrew.' >> ~/.zprofile
+  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+    
   echo "Finish install homebrew"
 else
   echo "Brew is already installed, skiped!!!"
