@@ -83,6 +83,7 @@ applications=(
   ["Discord"]="discord"
   ["Hammerspoon"]="hammerspoon"
   ["Rectangle"]="rectangle"
+  ["Obsidian"]="obsidian"
 )
 
 installApplication=()
