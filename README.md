@@ -17,6 +17,7 @@ defined configuration in the repository)
 * Discord
 * Hammerspoon
 * Rectangle
+* Obsidian
 
 # How to run
 
