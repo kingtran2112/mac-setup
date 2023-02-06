@@ -39,14 +39,6 @@ git config --global user.email "kingtran.2112@gmail.com"
 git config --global init.defaultBranch main
 git config pull.rebase true
 
-# Install node js
-if ! isCommandExist node
-then
-  brew install node
-else
-  echo "Node is already installed, skiped!!!"
-fi
-
 # Install prezto
 echo "Set up prezto"
 if [[ ! -d ${ZDOTDIR:-$HOME}/.zprezto ]]
@@ -111,6 +103,5 @@ cat << EOF >> ~/.zprofile
 # Add Visual Studio Code (code)
 export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 EOF
-
 
 brew cleanup
