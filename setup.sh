@@ -34,8 +34,12 @@ else
 fi
 
 echo "Config git"
-git config --global user.name "King Tran"
-git config --global user.email "kingtran.2112@gmail.com"
+
+read "githubName?Input github name: "
+git config --global user.name $githubName
+read "githubEmail?Input github email: "
+git config --global user.email $githubEmail
+
 git config --global init.defaultBranch main
 git config pull.rebase true
 
