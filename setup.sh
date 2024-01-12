@@ -43,6 +43,8 @@ git config --global user.email $githubEmail
 git config --global init.defaultBranch main
 git config pull.rebase true
 
+./gitconfig
+
 # Install prezto
 echo "Set up prezto"
 if [[ ! -d ${ZDOTDIR:-$HOME}/.zprezto ]]
